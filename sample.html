@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+
+	<title>FOOD ORDERING </title>
+</head>
+<body>
+	<div class="design">
+<h1>APPETIZER</h1>
+<form name="frn-pin" method="post" action="pin-index-a.php"></form>
+<input type="hidden" name="mode" value="PinRequest"/>
+<select name="tot-pin-requested" onchange="calculateAmount(this.value)" required>
+	<option value=""disabled selected>CHOSE YOUR ORDER</option>
+	<option value="2.5">FISH FELLET 	  ************* 250.00</option>
+	<option value="2.8">STUFFED MUSHROOMS ************* 280.00</option>
+	<option value="3.5">SHIRMP SCAMPI 	  ************* 350.00</option>
+	<option value="5.5">BRUSCHETTA 		  ************* 550.00</option>
+	<option value="7.9">ARTICHOKS 		  ************* 790.00</option>
+	<option value="1.2">CHICKEN DUMPLINGS ************* 120.00</option>
+	<option value="7.5">MEAT BALLS 		  ************* 750.00</option>
+	</select>
+<label><b>Total Amount : </b></label>
+<input class="w3-input w3-border"  name="tot_amount" id="tot_amount" type="text" readonly>
+</div>
+<h1>MAIN COURSE</h1>
+<form name="main_dish" method="post" action="pin-index-a.php"></form>
+<input type="hidden" name="mode" value="order"/>
+<select name="tot_order" onchange="calculate(this.value)" required>
+	<option value=""disabled selected>CHOSE YOUR ORDER</option>
+	<option value="2.5">CHESY PULL BREAD	      ************* 250.000</option>
+	<option value="4.5">CHICKEN CURRY 			  ************* 450.000</option>
+	<option value="1.5">BAKE HONEY MOSTARD	      ************* 150.000</option>
+	<option value="2.5">BEEF ONION RINGS		  ************* 250.000</option>
+	<option value="2">BEEF STAIKE		 		  *************  50.000</option>
+	<option value="5.5">BEEF MENUDO 			  ************* 550.000</option>
+	<option value="6.5">SPICY BICOL EXPRESS		  ************* 650.000</option>
+	</select>
+<label><b>Total Amount : </b></label>
+<input class="w3-input w3-border"  name="total" id="total" type="text" readonly>
+
+<h1>DESSERT</h1>
+<form name="dessert" method="post" action="pin-index-a.php"></form>
+<input type="hidden" name="mode" value="Pin"/>
+<select name="tot_dessert" onchange="calculateORDER(this.value)" required>
+	<option value=""disabled selected>CHOSE YOUR ORDER</option>
+	<option value="5">STRAWBERRY CAKE		 ************* 500.000</option>
+	<option value="8.9">CHOCOLATE CAKE		 ************* 890.000</option>
+	<option value="3.5">COKIES 				 ************* 350.000</option>
+	<option value="9.9">HONEY HOT HUDGE CAKE ************* 990.000</option>
+	<option value="6.9">APPLE CARAMEL 		 ************* 690.000</option>
+	<option value="12.9">CARROT CAKE  		 ************* 1290.000</option>
+	<option value="2.9">GELATIN CAKE         ************* 290.000</option>
+	</select>
+<label><b>Total Amount : </b></label>
+<input class="w3-input w3-border"  name="total_ord" id="total_ord" type="text" readonly>
+
+
+<script >
+	function calculateORDER(val){
+		var price1 = val * 100;
+		var dessert = document.getElementById('total_ord')
+		dessert.value = price1;
+		{
+			var price1 = price1+price1;
+			var ordered = document.getElementById('hell')
+			ordered.value = price1;
+		}
+	}
+
+	function calculate(val){
+		var price2 = val * 100;
+		var ordered = document.getElementById('total')
+		ordered.value = price2;
+	}
+
+	function calculateAmount(val){
+		var price3 = val * 100;
+		var divobj = document.getElementById('tot_amount')
+		divobj.value = price3;
+
+		
+
+	}
+
+	
+</script><br><br>
+<label><b> GRAND TOTAL AMOUNT OF ORDER : </b></label>
+<input class="w3-input w3-border"  name="hell" id="hell" type="text" readonly>
+
+</script>
+</bod
+</html>
